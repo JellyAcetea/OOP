@@ -1,21 +1,33 @@
 import java.util.Scanner;
 
 class BloodData {
-    static String bloodType;
-    static String rhFactor;
+    private String bloodType; 
+    private String rhFactor;  
 
+  
     public BloodData() {
         bloodType = "O"; 
         rhFactor = "+";  
     }
 
-    public BloodData(String bt, String rh) {
-        bloodType = bt; 
-        rhFactor = rh;  
+    public void setBloodType(String bt) {
+        bloodType = bt;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setRhFactor(String rh) {
+        rhFactor = rh;
+    }
+
+    public String getRhFactor() {
+        return rhFactor;
     }
 
     public void display() {
-        System.out.println(bloodType + rhFactor + " is added to the blood bank.");
+        System.out.println(getBloodType() + getRhFactor() + " is added to the blood bank.");
     }
 }
 
@@ -29,11 +41,12 @@ public class RunBloodData {
         System.out.print("Enter the Rhesus factor (+ or -): ");
         String input2 = scanner.nextLine().trim(); 
 
-        BloodData bd;
-        if (input1.isEmpty() && input2.isEmpty()) {
-            bd = new BloodData(); 
-        } else {
-            bd = new BloodData(input1, input2); 
+        BloodData bd = new BloodData(); 
+        if (!input1.isEmpty()) {
+            bd.setBloodType(input1);
+        }
+        if (!input2.isEmpty()) {
+            bd.setRhFactor(input2);
         }
 
         bd.display();
