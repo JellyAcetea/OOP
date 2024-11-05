@@ -1,0 +1,11 @@
+public class Faculty extends Person {
+    private boolean status; 
+
+    public void setStatus(boolean s) {
+        this.status = s;
+    }
+
+    public boolean isRegular() {
+        return status;
+    }
+}
