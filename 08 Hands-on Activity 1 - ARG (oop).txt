@@ -1,0 +1,36 @@
+1. 
+public interface Carnivore {
+
+    int pieces = 10;
+
+    void eatGrass(); 
+
+    default int chew() { 
+        return 13;
+    }
+
+}
+
+2. 
+interface HasWings { 
+
+    public int getNumberOfWings();
+
+}
+
+abstract class Insect implements HasWings {
+
+    public abstract int getNumberOfLegs(); // Add public access modifier
+
+}
+
+public class Dragonfly extends Insect {
+
+    public int getNumberOfLegs() { // Add public access modifier
+        return 6;
+    }
+
+    public int getNumberOfWings() { // Implement missing method
+        return 4; 
+    }
+}
